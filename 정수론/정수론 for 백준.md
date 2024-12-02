@@ -32,7 +32,7 @@
 > 
 > 소수란 1과 자기자신만을 약수로 가지는 숫자를 말한다.
 
-정의에 따르면 주어진 숫자 N이 소수인지 아닌지는 단순하게 1 ~ N-1로 나누어보면 알 수 있다.
+정의에 따르면 주어진 숫자 N이 소수인지 아닌지는 단순하게 2 ~ N-1로 나누어보면 알 수 있다.
 
 > **예제**
 >
@@ -41,13 +41,14 @@
 > 예제 풀이
 > ```python
 > N = int(input())
-> for i in range(1,N):
+> for i in range(2,N):
 >     if N%i == 0:
 >         print('not prime')
 >         break
 > else:
 >     print('prime')
 > ```
+
 
 
 #### --쉬는시간--
@@ -143,6 +144,8 @@
 >     if is_prime[i] == True:
 >         for j in range(i+i,N+1,i):
 >             is_prime[j] = False
+> print(is_prime) # 소수 여부를 출력
+> print([i for i in range(N+1) if is_prime[i]]) # 숫자를 출력
 > ```
 
 에라토스테네스의 체의 시간 복잡도는 O(N log(logN))이라고 한다. 합성수는 자신의 소인수 개수만큼 중복해서 처리가 되기 때문에 O(N)이 되지 못한다. 이는 다소 비효율적이라는 생각이 들 수도 있다. 소수 2의 배수를 지우면서 6은 이미 지워졌는데 소수3을 처리할 때 다시 방문하는 것이 마음에 들지 않는다.
@@ -220,7 +223,7 @@
 
 
 #### 연습 문제
-`문제1) 11653. 소인수분해 https://www.acmicpc.net/problem/11653`
+**`문제1) 11653. 소인수분해 https://www.acmicpc.net/problem/11653`**
 
 
 
@@ -376,10 +379,12 @@ gcd(a,b)가 a, b-a의 **1)공약수**임을 보이고, **2)모든 공약수의 �
 매우 간단하면서도 굉장히 빠른 코드임을 알 수 있다.
 
 #### 연습 문제
-`문제1) 2609. 최대공약수와 최소공배수 https://www.acmicpc.net/problem/2609`<br>
+**`문제1) 2609. 최대공약수와 최소공배수 https://www.acmicpc.net/problem/2609`<br>**
 `문제2) 1850. 최대공약수 https://www.acmicpc.net/problem/1850`<br>
 `문제3) 9613. GCD합 https://www.acmicpc.net/problem/9613`<br>
-`문제4) 2916. 자와 각도기 https://www.acmicpc.net/problem/2916`
+
+`문제4) 2916. 자와 각도기 https://www.acmicpc.net/problem/2916`<br>
+`문제5) 25342. 최대 최소공배수 https://www.acmicpc.net/problem/25342`
 
 ## 2.2 서로소
 
@@ -436,9 +441,9 @@ gcd(a,b)가 a, b-a의 **1)공약수**임을 보이고, **2)모든 공약수의 �
 
 
 #### 연습 문제
-`문제1) 4355. 서로소 https://www.acmicpc.net/problem/4355`<br>
+**`문제1) 4355. 서로소 https://www.acmicpc.net/problem/4355`<br>**
 `문제2) 1750. 서로소의 개수 https://www.acmicpc.net/problem/1750`<br>
-`문제3) 11689. GCD(n,k) = 1 https://www.acmicpc.net/problem/11689`<br>
+**`문제3) 11689. GCD(n,k) = 1 https://www.acmicpc.net/problem/11689`<br>**
 `문제4) 23832. 서로소 그래프 https://www.acmicpc.net/problem/23832`
 
 ## 2.3 서로소를 마치면서
